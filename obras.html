@@ -140,8 +140,8 @@
 <!-- Galería de videos -->
 <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-20 md:pb-28 reveal">
 <span class="font-label text-xs text-primary tracking-widest uppercase mb-4 block">Videos</span>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="video-grid">
-<div class="flex items-center justify-center h-56 brand-border bg-paper-alt text-ink-soft font-label text-sm" id="videos-loading">Cargando videos…</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="video-grid">
+<div class="flex items-center justify-center h-72 sm:h-80 md:h-96 lg:h-[26rem] brand-border bg-paper-alt text-ink-soft font-label text-sm" id="videos-loading">Cargando videos…</div>
 </div>
 </section>
 
@@ -210,7 +210,6 @@
     const GH_FOLDER_VIDEOS = 'videos/obras';  // carpeta del repo donde subís los videos
     const GH_BRANCH = 'main';                 // confirmá en GitHub si es "main" o "master"
     // ================================================
-
 
     // ---- Carrusel de fotos ----
     const track = document.getElementById('carousel-track');
@@ -304,17 +303,17 @@
                 .map(f => f.download_url);
 
             if (videos.length === 0) {
-                videoGrid.innerHTML = '<div class="col-span-full flex items-center justify-center h-56 brand-border bg-paper-alt text-ink-soft font-label text-sm">Todavía no hay videos cargados.</div>';
+                videoGrid.innerHTML = '<div class="col-span-full flex items-center justify-center h-72 sm:h-80 md:h-96 lg:h-[26rem] brand-border bg-paper-alt text-ink-soft font-label text-sm">Todavía no hay videos cargados.</div>';
                 return;
             }
 
             videoGrid.innerHTML = videos.map((src, i) => `
-                <div class="brand-border overflow-hidden bg-black aspect-video">
+                <div class="brand-border overflow-hidden bg-black h-72 sm:h-80 md:h-96 lg:h-[26rem]">
                     <video class="block w-full h-full object-cover" src="${src}" controls preload="metadata" playsinline aria-label="Video de obra ${i + 1}"></video>
                 </div>
             `).join('');
         } catch (err) {
-            videoGrid.innerHTML = '<div class="col-span-full flex items-center justify-center h-56 brand-border bg-paper-alt text-ink-soft font-label text-sm">No se pudieron cargar los videos. Probá recargar la página.</div>';
+            videoGrid.innerHTML = '<div class="col-span-full flex items-center justify-center h-72 sm:h-80 md:h-96 lg:h-[26rem] brand-border bg-paper-alt text-ink-soft font-label text-sm">No se pudieron cargar los videos. Probá recargar la página.</div>';
             console.error(err);
         }
     }
