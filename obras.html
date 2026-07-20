@@ -239,7 +239,7 @@
             }
 
             track.innerHTML = fotos.map((src, i) =>
-                `<div class="slide"><img alt="Obra ${i + 1}" class="w-full h-[50vh] md:h-[70vh] object-cover" src="${src}"/></div>`
+                `<div class="slide h-[50vh] md:h-[70vh] flex items-center justify-center bg-paper-alt"><img alt="Obra ${i + 1}" class="max-w-full max-h-full w-auto h-auto object-contain" src="${src}"/></div>`
             ).join('');
 
             total = fotos.length;
