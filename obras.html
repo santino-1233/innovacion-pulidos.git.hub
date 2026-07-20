@@ -204,8 +204,8 @@
     revealEls.forEach(el => revealObserver.observe(el));
 
     // ======= CONFIGURÁ ACÁ TU REPO DE GITHUB =======
-    const GH_USER = 'santino-1233';
-    const GH_REPO = 'innovacion-pulidos.git.hub';
+    const GH_USER = 'TU-USUARIO-DE-GITHUB';
+    const GH_REPO = 'TU-REPOSITORIO';
     const GH_FOLDER_FOTOS = 'images/obras';   // carpeta del repo donde subís las fotos
     const GH_FOLDER_VIDEOS = 'videos/obras';  // carpeta del repo donde subís los videos
     const GH_BRANCH = 'main';                 // confirmá en GitHub si es "main" o "master"
@@ -308,8 +308,8 @@
             }
 
             videoGrid.innerHTML = videos.map((src, i) => `
-                <div class="brand-border overflow-hidden bg-black">
-                    <video class="w-full h-64 object-cover" src="${src}" controls preload="metadata" playsinline aria-label="Video de obra ${i + 1}"></video>
+                <div class="brand-border overflow-hidden bg-black aspect-video">
+                    <video class="block w-full h-full object-cover" src="${src}" controls preload="metadata" playsinline aria-label="Video de obra ${i + 1}"></video>
                 </div>
             `).join('');
         } catch (err) {
