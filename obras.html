@@ -5,6 +5,11 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Obras | Innovación Pulidos</title>
 <meta name="description" content="Galería de obras de Innovación Pulidos: fotos y videos de pisos de hormigón pulido, mosaico/mármol y armado de piso realizados."/>
+<meta property="og:title" content="Obras | Innovación Pulidos"/>
+<meta property="og:description" content="Galería de obras: pisos de hormigón pulido, mosaico/mármol y armado de piso realizados por Innovación Pulidos."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://images.pexels.com/photos/176162/pexels-photo-176162.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+<meta property="og:locale" content="es_AR"/>
 <meta name="theme-color" content="#7B1E3A"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%237B1E3A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -69,6 +74,33 @@
     @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(123,30,58,.45); } 50% { box-shadow: 0 0 0 16px rgba(123,30,58,0); } }
     .pulse-cta { animation: pulseGlow 2.4s ease-out infinite; }
     .pulse-cta:hover { animation-play-state: paused; }
+
+    /* Barrido de brillo al pasar el mouse por botones sólidos */
+    .btn-solid { overflow: hidden; position: relative; }
+    .btn-solid::after {
+        content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+        transform: skewX(-20deg); transition: left .6s ease;
+    }
+    .btn-solid:hover::after { left: 125%; }
+
+    /* Subrayado animado en los links de navegación */
+    .nav-link { position: relative; }
+    .nav-link::after {
+        content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px;
+        background: #7B1E3A; transition: width .3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Entrada escalonada del encabezado al cargar la página */
+    @keyframes heroFadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-in-1 { animation: heroFadeUp .7s cubic-bezier(.4,0,.2,1) .05s both; }
+    .hero-in-2 { animation: heroFadeUp .7s cubic-bezier(.4,0,.2,1) .2s both; }
+    .hero-in-3 { animation: heroFadeUp .7s cubic-bezier(.4,0,.2,1) .35s both; }
+
+    /* Leve elevación de tarjetas al pasar el mouse */
+    .hover-lift { transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s ease; }
+    .hover-lift:hover { transform: translateY(-6px); }
 
     /* Marco de medios: mantiene la proporción del cuadro y nunca recorta ni deforma
        la imagen/video (siempre "object-fit: contain"). Solo la proporción del
@@ -182,23 +214,23 @@
 <!-- NAV -->
 <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-line">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-3 max-w-container-max mx-auto h-20">
-<a class="flex items-center gap-3" href="index.html">
-<img alt="Innovación Pulidos" class="flex-shrink-0 h-12 md:h-14 w-auto" src="logo.png"/>
-<span class="font-headline text-base md:text-lg font-bold text-ink uppercase tracking-tight leading-none">Innovación<br/><span>Pulidos</span></span>
+<a class="flex items-center gap-0" href="index.html">
+<img alt="Innovación Pulidos" class="flex-shrink-0 h-16 md:h-20 w-auto" src="logo.png"/>
+<span class="font-headline text-base md:text-lg font-bold text-ink uppercase tracking-tight leading-none -ml-1">Innovación<br/><span>Pulidos</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-8">
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#servicios">Servicios</a>
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#nosotros">Nosotros</a>
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#proceso">Proceso</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#servicios">Servicios</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#nosotros">Nosotros</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#proceso">Proceso</a>
 <a aria-current="page" class="text-primary font-label text-xs tracking-widest uppercase border-b-2 border-primary pb-1" href="obras.html">Obras</a>
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#contacto">Contacto</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="index.html#contacto">Contacto</a>
 </div>
 <div class="flex items-center gap-2 md:gap-3">
 <a aria-label="Instagram de Innovación Pulidos" class="hidden sm:flex w-11 h-11 border border-line items-center justify-center hover:border-primary hover:text-primary transition-colors" href="https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw" target="_blank" rel="noopener">
 <span class="material-symbols-outlined">photo_camera</span>
 </a>
 <a class="btn btn-solid px-4 md:px-6 py-2.5 md:py-3 font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2" href="https://wa.me/5491125547252?text=Hola%20Innovaci%C3%B3n%20Pulidos!%20Quiero%20pedir%20un%20presupuesto." target="_blank" rel="noopener">
-<span class="material-symbols-outlined text-[18px]">send</span> <span class="hidden sm:inline">PRESUPUESTO</span><span class="sm:hidden">COTIZAR</span>
+<span class="material-symbols-outlined text-[18px]">send</span> <span class="hidden sm:inline">PRESUPUESTO</span>
 </a>
 <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden w-11 h-11 flex items-center justify-center border border-line text-ink" id="menu-toggle">
 <span class="material-symbols-outlined" id="menu-icon">menu</span>
@@ -216,9 +248,9 @@
 
 <!-- Header -->
 <section class="pt-32 pb-10 md:pt-40 md:pb-14 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<span class="font-label text-xs text-primary tracking-widest uppercase">Obras</span>
-<h1 class="font-headline text-3xl md:text-6xl text-ink uppercase mt-3 font-extrabold">Nuestros Trabajos</h1>
-<p class="font-body text-ink-soft text-lg mt-4 max-w-2xl">Fotos y videos de pisos de hormigón pulido, mosaico/mármol y armado de piso que ya transformamos.</p>
+<span class="hero-in-1 font-label text-xs text-primary tracking-widest uppercase block">Obras</span>
+<h1 class="hero-in-2 font-headline text-3xl md:text-6xl text-ink uppercase mt-3 font-extrabold">Nuestros Trabajos</h1>
+<p class="hero-in-3 font-body text-ink-soft text-lg mt-4 max-w-2xl">Fotos y videos de pisos de hormigón pulido, mosaico/mármol y armado de piso que ya transformamos.</p>
 </section>
 
 <!-- Galería de fotos y videos -->
@@ -251,7 +283,10 @@
 <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-10 flex flex-col md:flex-row justify-between items-center gap-6">
 <div class="flex items-center gap-3">
 <img alt="Innovación Pulidos" class="flex-shrink-0 h-12 w-auto" src="logo2.png"/>
+<div>
 <p class="font-label text-xs text-on-dark-soft opacity-60">© 2026 Innovación Pulidos. Todos los derechos reservados.</p>
+<a class="font-label text-xs text-on-dark-soft opacity-60 hover:text-primary-light transition-colors" href="privacidad.html">Política de Privacidad</a>
+</div>
 </div>
 <div class="flex items-center gap-4">
 <a class="w-12 h-12 flex items-center justify-center border border-line-dark hover:bg-primary hover:border-primary transition-all group" href="https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw" target="_blank" rel="noopener" aria-label="Instagram">

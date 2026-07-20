@@ -8,6 +8,8 @@
 <meta property="og:title" content="Innovación Pulidos | Pulido de Pisos de Hormigón"/>
 <meta property="og:description" content="Recuperamos el brillo de tus pisos de hormigón. Pulido, mosaico/mármol y armado de pisos con terminaciones profesionales."/>
 <meta property="og:type" content="website"/>
+<meta property="og:image" content="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+<meta property="og:locale" content="es_AR"/>
 <meta name="theme-color" content="#7B1E3A"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%237B1E3A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -89,6 +91,42 @@
     @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(123,30,58,.45); } 50% { box-shadow: 0 0 0 16px rgba(123,30,58,0); } }
     .pulse-cta { animation: pulseGlow 2.4s ease-out infinite; }
     .pulse-cta:hover { animation-play-state: paused; }
+
+    /* Barrido de brillo al pasar el mouse por botones sólidos */
+    .btn-solid { overflow: hidden; }
+    .btn-solid::after {
+        content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+        transform: skewX(-20deg); transition: left .6s ease;
+    }
+    .btn-solid:hover::after { left: 125%; }
+
+    /* Subrayado animado en los links de navegación */
+    .nav-link { position: relative; }
+    .nav-link::after {
+        content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px;
+        background: #7B1E3A; transition: width .3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Entrada escalonada del hero al cargar la página */
+    @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-in-1 { animation: heroFadeUp .8s cubic-bezier(.4,0,.2,1) .05s both; }
+    .hero-in-2 { animation: heroFadeUp .8s cubic-bezier(.4,0,.2,1) .2s both; }
+    .hero-in-3 { animation: heroFadeUp .8s cubic-bezier(.4,0,.2,1) .35s both; }
+    .hero-in-4 { animation: heroFadeUp .8s cubic-bezier(.4,0,.2,1) .5s both; }
+    .hero-in-5 { animation: heroFadeUp .8s cubic-bezier(.4,0,.2,1) .65s both; }
+
+    /* Zoom lento y continuo de la imagen de fondo del hero */
+    @keyframes kenBurns { from { transform: scale(1); } to { transform: scale(1.08); } }
+    .hero-bg-img { animation: kenBurns 16s ease-in-out infinite alternate; }
+
+    /* Leve elevación de tarjetas al pasar el mouse */
+    .hover-lift { transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s ease; }
+    .hover-lift:hover { transform: translateY(-8px); }
+
+    /* Estrellas de reseñas */
+    .stars { color: #E7B93F; letter-spacing: 2px; }
 </style>
 </head>
 <body class="font-body overflow-x-hidden selection:bg-primary selection:text-white" id="top">
@@ -97,23 +135,23 @@
 <!-- NAV -->
 <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-line">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-3 max-w-container-max mx-auto h-20">
-<a class="flex items-center gap-3" href="#top">
-<img alt="Innovación Pulidos" class="flex-shrink-0 h-12 md:h-14 w-auto" src="logo.png"/>
+<a class="flex items-center gap-0" href="#top">
+<img alt="Innovación Pulidos" class="flex-shrink-0 h-16 md:h-20 w-auto" src="logo.png"/>
 <span class="font-headline text-base md:text-lg font-bold text-ink uppercase tracking-tight leading-none">Innovación<br/><span>Pulidos</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-8">
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#servicios">Servicios</a>
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#proceso">Proceso</a>
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="obras.html">Obras</a>
-<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#contacto">Contacto</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#servicios">Servicios</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#proceso">Proceso</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="obras.html">Obras</a>
+<a class="nav-link text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#contacto">Contacto</a>
 </div>
 <div class="flex items-center gap-2 md:gap-3">
 <a aria-label="Instagram de Innovación Pulidos" class="hidden sm:flex w-11 h-11 border border-line items-center justify-center hover:border-primary hover:text-primary transition-colors" href="https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw" target="_blank" rel="noopener">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle></svg>
 </a>
 <a class="btn btn-solid px-4 md:px-6 py-2.5 md:py-3 font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2" href="https://wa.me/5491125547252?text=Hola%20Innovaci%C3%B3n%20Pulidos!%20Quiero%20pedir%20un%20presupuesto." target="_blank" rel="noopener">
-<span class="material-symbols-outlined text-[18px]">send</span> <span class="hidden sm:inline">PRESUPUESTO</span><span class="sm:hidden">COTIZAR</span>
+<span class="material-symbols-outlined text-[18px]">send</span> <span class="hidden sm:inline">PRESUPUESTO</span>
 </a>
 <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden w-11 h-11 flex items-center justify-center border border-line text-ink" id="menu-toggle">
 <span class="material-symbols-outlined" id="menu-icon">menu</span>
@@ -134,21 +172,22 @@
 <!-- HERO -->
 <section class="relative min-h-screen flex items-center pt-20">
 <div class="absolute inset-0 z-0">
-<img alt="Piso de hormigón pulido con brillo profesional en interior" class="w-full h-full object-cover brightness-[0.55]" src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
-<div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20"></div>
+<img alt="Piso de hormigón pulido con brillo profesional en interior" class="hero-bg-img absolute inset-0 w-full h-full object-cover brightness-[0.45]" src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/30"></div>
 </div>
 <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full py-16 md:py-20">
 <div class="max-w-3xl">
-<div class="inline-block bg-primary text-white px-4 py-1.5 font-label text-[11px] md:text-xs uppercase tracking-widest mb-6">
+<div class="hero-in-1 inline-block bg-primary text-white px-4 py-1.5 font-label text-[11px] md:text-xs uppercase tracking-widest mb-6">
 Especialistas en pulido de hormigón
 </div>
-<h1 class="font-headline text-4xl md:text-6xl text-white mb-6 uppercase leading-[1.08] font-extrabold">
+<h1 class="hero-in-2 font-headline text-4xl md:text-6xl text-white mb-6 uppercase leading-[1.08] font-extrabold">
 Recuperá el brillo <br/><span class="text-primary-light">de tu piso de hormigón</span>
 </h1>
-<p class="font-body text-lg md:text-xl text-white/85 mb-10 max-w-xl leading-relaxed">
+<p class="hero-in-3 font-body text-lg md:text-xl text-white/85 mb-10 max-w-xl leading-relaxed">
 Ese piso que hoy parece gastado, opaco o perdido puede volver a lucir como protagonista de tu hogar o espacio de trabajo, sin cambiarlo ni invertir en uno nuevo.
 </p>
-<div class="flex flex-col sm:flex-row gap-4 mb-12">
+<div class="hero-in-4 flex flex-col sm:flex-row gap-4 mb-12">
 <a class="btn btn-solid px-8 md:px-10 py-4 md:py-5 font-headline text-base md:text-lg font-bold uppercase flex items-center justify-center gap-3" href="https://wa.me/5491125547252?text=Hola%20Innovaci%C3%B3n%20Pulidos!%20Quiero%20consultar%20por%20el%20pulido%20de%20mi%20piso." target="_blank" rel="noopener">
 <span class="material-symbols-outlined">chat</span> WHATSAPP DIRECTO
 </a>
@@ -156,9 +195,9 @@ Ese piso que hoy parece gastado, opaco o perdido puede volver a lucir como prota
 <span class="material-symbols-outlined">construction</span> VER OBRAS
 </a>
 </div>
-<div class="flex items-center gap-6 md:gap-10 text-white">
+<div class="hero-in-5 flex items-center gap-6 md:gap-10 text-white">
 <div class="flex flex-col">
-<span class="font-headline text-2xl md:text-3xl text-primary-light font-extrabold">100%</span>
+<span class="font-headline text-2xl md:text-3xl text-primary-light font-extrabold"><span id="stat-counter">0</span>%</span>
 <span class="font-label text-[10px] uppercase tracking-widest text-white/70">TRABAJO PROFESIONAL</span>
 </div>
 </div>
@@ -210,7 +249,7 @@ Nos adaptamos a la imagen que querés lograr en tus pisos: analizamos cada super
 </div>
 </div>
 <div class="relative reveal">
-<img alt="Piso de hormigón pulido con terminación brillante" class="brand-border wine-shadow w-full h-80 md:h-[28rem] object-cover" src="https://images.pexels.com/photos/7031622/pexels-photo-7031622.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<img alt="Piso de hormigón pulido con terminación brillante" class="brand-border wine-shadow w-full h-80 md:h-[28rem] object-cover" loading="lazy" src="https://images.pexels.com/photos/7031622/pexels-photo-7031622.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
 <div class="absolute -bottom-6 -left-6 bg-primary text-white px-6 py-4 font-headline text-sm md:text-base font-bold uppercase tracking-wide hidden sm:block">
 Querés que tus pisos<br/>vuelvan a lucir como nuevos?
 </div>
@@ -230,7 +269,7 @@ Querés que tus pisos<br/>vuelvan a lucir como nuevos?
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 brand-border wine-shadow mb-gutter overflow-hidden reveal">
 <div class="h-72 lg:h-auto overflow-hidden">
-<img alt="Pulido de piso de hormigón con maquinaria profesional" class="w-full h-full object-cover" src="https://images.pexels.com/photos/7031409/pexels-photo-7031409.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<img alt="Pulido de piso de hormigón con maquinaria profesional" class="w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/7031409/pexels-photo-7031409.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
 </div>
 <div class="p-8 md:p-12 flex flex-col justify-center bg-paper-alt">
 <span class="inline-block bg-primary text-white px-3 py-1 font-label text-[10px] uppercase tracking-widest mb-4 w-fit">Nuestra especialidad</span>
@@ -243,9 +282,9 @@ Es lo que más nos destaca: devolvemos brillo, presencia y vida a superficies op
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter reveal-stagger">
-<div class="group overflow-hidden brand-border flex flex-col">
+<div class="group hover-lift overflow-hidden brand-border flex flex-col">
 <div class="h-56 overflow-hidden relative">
-<img alt="Instalación profesional de mosaico y mármol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/30112372/pexels-photo-30112372.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<img alt="Instalación profesional de mosaico y mármol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" src="https://images.pexels.com/photos/30112372/pexels-photo-30112372.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
 <div class="absolute inset-0 bg-primary/15 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <div class="p-6 flex-grow flex flex-col">
@@ -254,9 +293,9 @@ Es lo que más nos destaca: devolvemos brillo, presencia y vida a superficies op
 <a class="font-label text-xs uppercase tracking-widest text-primary border-b-2 border-primary pb-1 w-fit hover:gap-4" href="https://wa.me/5491125547252?text=Hola!%20Quiero%20consultar%20por%20instalaci%C3%B3n%20de%20mosaico%2Fm%C3%A1rmol." target="_blank" rel="noopener">Consultar</a>
 </div>
 </div>
-<div class="group overflow-hidden brand-border flex flex-col">
+<div class="group hover-lift overflow-hidden brand-border flex flex-col">
 <div class="h-56 overflow-hidden relative">
-<img alt="Armado y construcción de piso de hormigón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/37733176/pexels-photo-37733176.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<img alt="Armado y construcción de piso de hormigón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" src="https://images.pexels.com/photos/37733176/pexels-photo-37733176.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
 <div class="absolute inset-0 bg-primary/15 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <div class="p-6 flex-grow flex flex-col">
@@ -332,14 +371,61 @@ Nada mejor que ver el resultado. Entrá a nuestra galería de obras y descubrí 
 </div>
 <div class="grid grid-cols-2 gap-4 reveal">
 <a href="obras.html" class="block col-span-2 h-48 md:h-56 overflow-hidden brand-border">
-<img alt="Obra de piso pulido terminada" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/176162/pexels-photo-176162.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+<img alt="Obra de piso pulido terminada" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" src="https://images.pexels.com/photos/176162/pexels-photo-176162.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
 </a>
 <a href="obras.html" class="block h-32 md:h-40 overflow-hidden brand-border">
-<img alt="Detalle de piso con reflejos" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/12620106/pexels-photo-12620106.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+<img alt="Detalle de piso con reflejos" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" src="https://images.pexels.com/photos/12620106/pexels-photo-12620106.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
 </a>
 <a href="obras.html" class="block h-32 md:h-40 overflow-hidden brand-border">
-<img alt="Ambiente con piso de mármol" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/6713385/pexels-photo-6713385.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+<img alt="Ambiente con piso de mármol" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" src="https://images.pexels.com/photos/6713385/pexels-photo-6713385.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
 </a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIOS -->
+<!-- Reemplazar por reseñas reales de clientes apenas estén disponibles -->
+<section class="py-24 md:py-32 bg-paper-dark floor-joint">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16 text-center">
+<span class="font-label text-xs text-primary-light tracking-widest uppercase mb-3 block">Lo que dicen</span>
+<h2 class="font-headline text-3xl md:text-5xl text-on-dark font-extrabold mb-4 uppercase">Clientes Satisfechos</h2>
+<div class="h-1.5 w-24 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+<div class="hover-lift bg-paper p-8 brand-border flex flex-col">
+<span class="stars font-label text-lg mb-4">★★★★★</span>
+<p class="font-body text-ink-soft mb-6 leading-relaxed flex-grow">"El piso quedó irreconocible, no pensé que se podía recuperar tanto brillo sin romper nada. Muy prolijos y puntuales con los tiempos."</p>
+<div class="flex items-center gap-3 pt-4 border-t border-line">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-headline text-primary font-bold">M</div>
+<div>
+<p class="font-headline text-sm text-ink font-bold">Marcela G.</p>
+<p class="font-label text-[11px] text-ink-soft uppercase tracking-widest">Vivienda particular</p>
+</div>
+</div>
+</div>
+<div class="hover-lift bg-paper p-8 brand-border flex flex-col">
+<span class="stars font-label text-lg mb-4">★★★★★</span>
+<p class="font-body text-ink-soft mb-6 leading-relaxed flex-grow">"Contratamos el armado y pulido para el local desde cero. Comunicación clara en todo el proceso y terminación de nivel profesional."</p>
+<div class="flex items-center gap-3 pt-4 border-t border-line">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-headline text-primary font-bold">F</div>
+<div>
+<p class="font-headline text-sm text-ink font-bold">Fabricio R.</p>
+<p class="font-label text-[11px] text-ink-soft uppercase tracking-widest">Local comercial</p>
+</div>
+</div>
+</div>
+<div class="hover-lift bg-paper p-8 brand-border flex flex-col">
+<span class="stars font-label text-lg mb-4">★★★★★</span>
+<p class="font-body text-ink-soft mb-6 leading-relaxed flex-grow">"Hicieron el estudio previo sin cargo y nos recomendaron la mejor solución para el mármol de la entrada. Resultado impecable."</p>
+<div class="flex items-center gap-3 pt-4 border-t border-line">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-headline text-primary font-bold">E</div>
+<div>
+<p class="font-headline text-sm text-ink font-bold">Estudio Bianchi</p>
+<p class="font-label text-[11px] text-ink-soft uppercase tracking-widest">Estudio de arquitectura</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -443,6 +529,13 @@ Sí, trabajamos tanto en hogares como en espacios de trabajo, locales comerciale
 <p class="font-headline text-xl text-on-dark">@innovacionpulidoss</p>
 </div>
 </a>
+<div class="p-8 bg-paper-dark brand-border flex items-center gap-6 border-l-8 border-l-primary">
+<span class="material-symbols-outlined text-primary-light text-5xl">location_on</span>
+<div>
+<p class="font-label text-xs text-on-dark-soft mb-1 uppercase tracking-widest">Zona de cobertura</p>
+<p class="font-body text-on-dark">Contanos dónde estás y te confirmamos por WhatsApp si llegamos a tu zona.</p>
+</div>
+</div>
 <div class="p-8 bg-primary text-white brand-border flex-grow flex flex-col justify-center">
 <span class="material-symbols-outlined text-3xl mb-4">verified</span>
 <h4 class="font-headline text-xl font-bold mb-3 uppercase">Coordiná tu visita</h4>
@@ -469,7 +562,7 @@ Sí, trabajamos tanto en hogares como en espacios de trabajo, locales comerciale
 <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-12">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 <div class="lg:col-span-2">
-<div class="flex items-center gap-3 mb-6">
+<div class="flex items-center gap-0.5 mb-6">
 <img alt="Innovación Pulidos" class="flex-shrink-0 h-12 w-auto" src="logo2.png"/>
 <span class="font-headline text-xl font-bold uppercase text-on-dark">Innovación<br/>Pulidos</span>
 </div>
@@ -504,7 +597,10 @@ Especialistas en pulido de pisos de hormigón, instalación de mosaico/mármol y
 </div>
 <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-line-dark gap-4">
 <p class="font-label text-xs text-on-dark-soft opacity-70">© 2026 Innovación Pulidos. Todos los derechos reservados.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary-light transition-colors font-label text-xs text-on-dark-soft opacity-70" href="privacidad.html">Política de Privacidad</a>
 <a class="hover:text-primary-light transition-colors font-label text-xs text-on-dark-soft opacity-70" href="tel:+541125547252">011 2554-7252</a>
+</div>
 </div>
 </div>
 </footer>
@@ -548,6 +644,21 @@ Especialistas en pulido de pisos de hormigón, instalación de mosaico/mármol y
                 menuIcon.textContent = 'menu';
             });
         });
+    }
+
+    const statCounter = document.getElementById('stat-counter');
+    if (statCounter) {
+        const target = 100;
+        const duration = 1400;
+        setTimeout(() => {
+            const start = performance.now();
+            function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                statCounter.textContent = Math.round(progress * target);
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }, 500);
     }
 
     const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
