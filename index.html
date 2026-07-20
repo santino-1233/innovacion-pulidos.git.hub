@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Innovación Pulidos | Pulido de Pisos de Hormigón, Mosaico y Mármol</title>
+<meta name="description" content="Innovación Pulidos: especialistas en pulido de pisos de hormigón, instalación de mosaico y mármol, y armado de pisos de hormigón. Trabajo profesional, prolijo y de excelencia. Presupuesto sin cargo por WhatsApp."/>
+<meta property="og:title" content="Innovación Pulidos | Pulido de Pisos de Hormigón"/>
+<meta property="og:description" content="Recuperamos el brillo de tus pisos de hormigón. Pulido, mosaico/mármol y armado de pisos con terminaciones profesionales."/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#7B1E3A"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%237B1E3A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#7B1E3A",
+                    "primary-dark": "#59152A",
+                    "primary-light": "#9C3A57",
+                    ink: "#171512",
+                    "ink-soft": "#5B534D",
+                    paper: "#FFFFFF",
+                    "paper-alt": "#F7F3EF",
+                    "paper-dark": "#121110",
+                    "on-dark": "#F5F1EC",
+                    "on-dark-soft": "#C9C0B8",
+                    line: "#E6DFD7",
+                    "line-dark": "#2C2A28"
+                },
+                spacing: {
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px"
+                },
+                fontFamily: {
+                    headline: ["Montserrat", "sans-serif"],
+                    body: ["Hanken Grotesk", "sans-serif"],
+                    label: ["JetBrains Mono", "monospace"]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #FFFFFF; color: #171512; }
+    .skip-link { position: absolute; left: -9999px; top: 0; background: #7B1E3A; color: #fff; padding: 10px 18px; z-index: 100; }
+    .skip-link:focus { left: 16px; top: 16px; }
+    .brand-border { border: 1.5px solid #E6DFD7; }
+    .brand-border:hover { border-color: #7B1E3A; }
+    .soft-shadow { box-shadow: 0 18px 40px -20px rgba(23,21,18,0.25); }
+    .wine-shadow { box-shadow: 8px 8px 0 0 rgba(123,30,58,0.12); }
+    /* Firma: línea que evoca la junta de dilatación de un piso de hormigón pulido */
+    .floor-joint { position: relative; }
+    .floor-joint::before {
+        content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: linear-gradient(90deg, transparent, #7B1E3A 15%, #7B1E3A 85%, transparent);
+    }
+    .btn { transition: all .3s cubic-bezier(.4,0,.2,1); position: relative; }
+    .btn:active { transform: scale(.97); }
+    .btn-solid { background: #7B1E3A; color: #fff; }
+    .btn-solid:hover { background: #59152A; }
+    .btn-outline { border: 2px solid #171512; color: #171512; background: transparent; }
+    .btn-outline:hover { background: #171512; color: #fff; }
+    .btn-outline-light { border: 2px solid #FFFFFF; color: #FFFFFF; }
+    .btn-outline-light:hover { background: #FFFFFF; color: #171512; }
+    .textured { background-image: radial-gradient(#E6DFD7 1px, transparent 1px); background-size: 22px 22px; }
+    details > summary::-webkit-details-marker { display: none; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
+        outline: 2px solid #7B1E3A; outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; }
+    .reveal.in-view { animation: fadeInUp .7s cubic-bezier(.4,0,.2,1) forwards; }
+    .reveal-stagger.in-view > * { animation: fadeInUp .6s cubic-bezier(.4,0,.2,1) forwards; opacity: 0; }
+    .reveal-stagger.in-view > *:nth-child(1) { animation-delay: 0s; }
+    .reveal-stagger.in-view > *:nth-child(2) { animation-delay: .1s; }
+    .reveal-stagger.in-view > *:nth-child(3) { animation-delay: .2s; }
+    .reveal-stagger.in-view > *:nth-child(4) { animation-delay: .3s; }
+    @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(123,30,58,.45); } 50% { box-shadow: 0 0 0 16px rgba(123,30,58,0); } }
+    .pulse-cta { animation: pulseGlow 2.4s ease-out infinite; }
+    .pulse-cta:hover { animation-play-state: paused; }
+</style>
+</head>
+<body class="font-body overflow-x-hidden selection:bg-primary selection:text-white" id="top">
+<a class="skip-link font-label text-xs" href="#contenido">Saltar al contenido</a>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-line">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-3 max-w-container-max mx-auto h-20">
+<a class="flex items-center gap-3" href="#top">
+<span class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-primary text-white flex items-center justify-center font-headline font-extrabold text-lg md:text-xl rounded-sm">IP</span>
+<span class="font-headline text-base md:text-lg font-bold text-ink uppercase tracking-tight leading-none">Innovación<br/><span>Pulidos</span></span>
+</a>
+<div class="hidden lg:flex items-center gap-8">
+<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#servicios">Servicios</a>
+<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
+<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#proceso">Proceso</a>
+<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="obras.html">Obras</a>
+<a class="text-ink font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#contacto">Contacto</a>
+</div>
+<div class="flex items-center gap-2 md:gap-3">
+<a aria-label="Instagram de Innovación Pulidos" class="hidden sm:flex w-11 h-11 border border-line items-center justify-center hover:border-primary hover:text-primary transition-colors" href="https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw" target="_blank" rel="noopener">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+<a class="btn btn-solid px-4 md:px-6 py-2.5 md:py-3 font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2" href="https://wa.me/5491125547252?text=Hola%20Innovaci%C3%B3n%20Pulidos!%20Quiero%20pedir%20un%20presupuesto." target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-[18px]">send</span> <span class="hidden sm:inline">PRESUPUESTO</span><span class="sm:hidden">COTIZAR</span>
+</a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden w-11 h-11 flex items-center justify-center border border-line text-ink" id="menu-toggle">
+<span class="material-symbols-outlined" id="menu-icon">menu</span>
+</button>
+</div>
+</div>
+<div class="hidden flex-col bg-white border-t border-line lg:hidden" id="mobile-menu">
+<a class="px-margin-mobile py-4 border-b border-line font-label text-xs uppercase tracking-widest text-ink hover:text-primary transition-colors" href="#servicios">Servicios</a>
+<a class="px-margin-mobile py-4 border-b border-line font-label text-xs uppercase tracking-widest text-ink hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
+<a class="px-margin-mobile py-4 border-b border-line font-label text-xs uppercase tracking-widest text-ink hover:text-primary transition-colors" href="#proceso">Proceso</a>
+<a class="px-margin-mobile py-4 border-b border-line font-label text-xs uppercase tracking-widest text-ink hover:text-primary transition-colors" href="obras.html">Obras</a>
+<a class="px-margin-mobile py-4 border-b border-line font-label text-xs uppercase tracking-widest text-ink hover:text-primary transition-colors" href="#contacto">Contacto</a>
+<a class="px-margin-mobile py-4 font-label text-xs uppercase tracking-widest text-ink hover:text-primary transition-colors flex items-center gap-2" href="https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[18px]">photo_camera</span> Instagram</a>
+</div>
+</nav>
+
+<main id="contenido">
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center pt-20">
+<div class="absolute inset-0 z-0">
+<img alt="Piso de hormigón pulido con brillo profesional en interior" class="w-full h-full object-cover brightness-[0.55]" src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full py-16 md:py-20">
+<div class="max-w-3xl">
+<div class="inline-block bg-primary text-white px-4 py-1.5 font-label text-[11px] md:text-xs uppercase tracking-widest mb-6">
+Especialistas en pulido de hormigón
+</div>
+<h1 class="font-headline text-4xl md:text-6xl text-white mb-6 uppercase leading-[1.08] font-extrabold">
+Recuperá el brillo <br/><span class="text-primary-light">de tu piso de hormigón</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-white/85 mb-10 max-w-xl leading-relaxed">
+Ese piso que hoy parece gastado, opaco o perdido puede volver a lucir como protagonista de tu hogar o espacio de trabajo, sin cambiarlo ni invertir en uno nuevo.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 mb-12">
+<a class="btn btn-solid px-8 md:px-10 py-4 md:py-5 font-headline text-base md:text-lg font-bold uppercase flex items-center justify-center gap-3" href="https://wa.me/5491125547252?text=Hola%20Innovaci%C3%B3n%20Pulidos!%20Quiero%20consultar%20por%20el%20pulido%20de%20mi%20piso." target="_blank" rel="noopener">
+<span class="material-symbols-outlined">chat</span> WHATSAPP DIRECTO
+</a>
+<a class="btn btn-outline-light px-8 md:px-10 py-4 md:py-5 font-headline text-base md:text-lg font-bold uppercase flex items-center justify-center gap-2" href="obras.html">
+<span class="material-symbols-outlined">construction</span> VER OBRAS
+</a>
+</div>
+<div class="flex items-center gap-6 md:gap-10 text-white">
+<div class="flex flex-col">
+<span class="font-headline text-2xl md:text-3xl text-primary-light font-extrabold">100%</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-white/70">TRABAJO PROFESIONAL</span>
+</div>
+<div class="w-px h-12 bg-white/20"></div>
+<div class="flex flex-col">
+<span class="font-headline text-2xl md:text-3xl text-primary-light font-extrabold">$0</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-white/70">PRESUPUESTO SIN CARGO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WHY US STRIP (reemplaza el carrusel de empresas) -->
+<section class="bg-paper-dark py-14 border-b border-line-dark">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal-stagger">
+<div class="flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary-light text-3xl">verified</span>
+<span class="font-label text-[11px] md:text-xs text-on-dark uppercase tracking-widest">Trabajo responsable</span>
+</div>
+<div class="flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary-light text-3xl">design_services</span>
+<span class="font-label text-[11px] md:text-xs text-on-dark uppercase tracking-widest">Estudio previo gratuito</span>
+</div>
+<div class="flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary-light text-3xl">auto_awesome</span>
+<span class="font-label text-[11px] md:text-xs text-on-dark uppercase tracking-widest">Terminaciones de excelencia</span>
+</div>
+<div class="flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary-light text-3xl">schedule</span>
+<span class="font-label text-[11px] md:text-xs text-on-dark uppercase tracking-widest">Cumplimiento de plazos</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="py-24 md:py-32 bg-paper-alt textured floor-joint" id="nosotros">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<div class="reveal">
+<span class="font-label text-xs text-primary tracking-widest uppercase mb-4 block">Quiénes somos</span>
+<h2 class="font-headline text-3xl md:text-5xl text-ink font-extrabold mb-6 uppercase leading-tight">Un piso nuevo, sin cambiar el piso</h2>
+<p class="font-body text-lg text-ink-soft mb-6 leading-relaxed">
+En Innovación Pulidos nos comprometemos a brindar un trabajo profesional, responsable y de excelencia. Recuperamos el brillo, la presencia y la vida de tus superficies con procesos de pulido de alta calidad y atención en cada detalle.
+</p>
+<p class="font-body text-lg text-ink-soft mb-10 leading-relaxed">
+Nos adaptamos a la imagen que querés lograr en tus pisos: analizamos cada superficie, realizamos un estudio previo y te recomendamos la mejor solución para obtener un resultado duradero, estético y de calidad.
+</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><span class="font-body text-ink">Diagnóstico y estudio previo sin cargo</span></div>
+<div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><span class="font-body text-ink">Especialistas en el rubro del pulido</span></div>
+<div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><span class="font-body text-ink">Atención al detalle en cada etapa</span></div>
+</div>
+</div>
+<div class="relative reveal">
+<img alt="Piso de hormigón pulido con terminación brillante" class="brand-border wine-shadow w-full h-80 md:h-[28rem] object-cover" src="https://images.pexels.com/photos/6474655/pexels-photo-6474655.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<div class="absolute -bottom-6 -left-6 bg-primary text-white px-6 py-4 font-headline text-sm md:text-base font-bold uppercase tracking-wide hidden sm:block">
+Querés que tus pisos<br/>vuelvan a lucir como nuevos?
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="py-24 md:py-32 bg-paper" id="servicios">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16 text-center">
+<span class="font-label text-xs text-primary tracking-widest uppercase mb-3 block">Lo que hacemos</span>
+<h2 class="font-headline text-3xl md:text-5xl text-ink font-extrabold mb-4 uppercase">Nuestros Servicios</h2>
+<div class="h-1.5 w-24 bg-primary mx-auto"></div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-0 brand-border wine-shadow mb-gutter overflow-hidden reveal">
+<div class="h-72 lg:h-auto overflow-hidden">
+<img alt="Pulido de piso de hormigón con maquinaria profesional" class="w-full h-full object-cover" src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+</div>
+<div class="p-8 md:p-12 flex flex-col justify-center bg-paper-alt">
+<span class="inline-block bg-primary text-white px-3 py-1 font-label text-[10px] uppercase tracking-widest mb-4 w-fit">Nuestra especialidad</span>
+<h3 class="font-headline text-2xl md:text-3xl text-ink font-extrabold mb-4 uppercase">Pulido de Pisos de Hormigón</h3>
+<p class="font-body text-ink-soft mb-6 leading-relaxed">
+Es lo que más nos destaca: devolvemos brillo, presencia y vida a superficies opacas o gastadas, con procesos de pulido de alta calidad y terminaciones profesionales de alto nivel, sin necesidad de romper ni reemplazar el piso existente.
+</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-xs uppercase tracking-widest border-b-2 border-primary pb-1 hover:gap-4 transition-all w-fit" href="https://wa.me/5491125547252?text=Hola!%20Quiero%20consultar%20por%20el%20pulido%20de%20piso%20de%20hormig%C3%B3n." target="_blank" rel="noopener">Consultar por este servicio <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter reveal-stagger">
+<div class="group overflow-hidden brand-border flex flex-col">
+<div class="h-56 overflow-hidden relative">
+<img alt="Instalación profesional de mosaico y mármol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/6444266/pexels-photo-6444266.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<div class="absolute inset-0 bg-primary/15 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h4 class="font-headline text-xl text-ink font-bold mb-3 uppercase">Instalación de Mosaico y Mármol</h4>
+<p class="text-ink-soft font-body mb-6 flex-grow">Colocación con terminaciones prolijas y de excelente presencia, para pisos que buscan un resultado elegante y duradero.</p>
+<a class="font-label text-xs uppercase tracking-widest text-primary border-b-2 border-primary pb-1 w-fit hover:gap-4" href="https://wa.me/5491125547252?text=Hola!%20Quiero%20consultar%20por%20instalaci%C3%B3n%20de%20mosaico%2Fm%C3%A1rmol." target="_blank" rel="noopener">Consultar</a>
+</div>
+</div>
+<div class="group overflow-hidden brand-border flex flex-col">
+<div class="h-56 overflow-hidden relative">
+<img alt="Armado y construcción de piso de hormigón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/8961127/pexels-photo-8961127.jpeg?auto=compress&cs=tinysrgb&w=1600"/>
+<div class="absolute inset-0 bg-primary/15 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h4 class="font-headline text-xl text-ink font-bold mb-3 uppercase">Armado de Piso de Hormigón</h4>
+<p class="text-ink-soft font-body mb-6 flex-grow">Preparación, nivelado y construcción de piso de hormigón desde cero, listo para pulir o revestir según lo que necesites.</p>
+<a class="font-label text-xs uppercase tracking-widest text-primary border-b-2 border-primary pb-1 w-fit hover:gap-4" href="https://wa.me/5491125547252?text=Hola!%20Quiero%20consultar%20por%20armado%20de%20piso%20de%20hormig%C3%B3n." target="_blank" rel="noopener">Consultar</a>
+</div>
+</div>
+</div>
+
+<div class="flex justify-center mt-16 reveal">
+<a class="pulse-cta group relative inline-flex items-center gap-3 bg-primary text-white px-10 md:px-14 py-5 md:py-6 font-headline text-lg md:text-2xl font-bold uppercase btn" href="obras.html">
+<span class="material-symbols-outlined text-2xl md:text-3xl transition-transform group-hover:translate-x-1">construction</span>
+VER OBRAS REALIZADAS
+<span class="material-symbols-outlined text-2xl md:text-3xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- PROCESO -->
+<section class="py-24 md:py-32 bg-paper-dark" id="proceso">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<span class="font-label text-xs text-primary-light tracking-widest uppercase mb-3 block">Cómo trabajamos</span>
+<h2 class="font-headline text-3xl md:text-5xl text-on-dark mb-20 uppercase font-extrabold">Nuestro Proceso</h2>
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 reveal-stagger">
+<div class="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-line-dark z-0"></div>
+<div class="flex flex-col items-center relative z-10">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+<span class="font-headline text-white font-bold">01</span>
+</div>
+<h6 class="font-headline text-lg text-on-dark font-bold mb-3 uppercase">Contacto</h6>
+<p class="text-on-dark-soft text-sm px-4">Nos escribís por WhatsApp o Instagram y contás qué necesitás.</p>
+</div>
+<div class="flex flex-col items-center relative z-10">
+<div class="w-16 h-16 bg-transparent border-2 border-primary-light rounded-full flex items-center justify-center mb-6">
+<span class="font-headline text-primary-light font-bold">02</span>
+</div>
+<h6 class="font-headline text-lg text-on-dark font-bold mb-3 uppercase">Estudio previo</h6>
+<p class="text-on-dark-soft text-sm px-4">Analizamos la superficie y te recomendamos la mejor solución, sin cargo.</p>
+</div>
+<div class="flex flex-col items-center relative z-10">
+<div class="w-16 h-16 bg-transparent border-2 border-primary-light rounded-full flex items-center justify-center mb-6">
+<span class="font-headline text-primary-light font-bold">03</span>
+</div>
+<h6 class="font-headline text-lg text-on-dark font-bold mb-3 uppercase">Ejecución</h6>
+<p class="text-on-dark-soft text-sm px-4">Trabajamos con terminaciones profesionales y atención en cada detalle.</p>
+</div>
+<div class="flex flex-col items-center relative z-10">
+<div class="w-16 h-16 bg-transparent border-2 border-primary-light rounded-full flex items-center justify-center mb-6">
+<span class="font-headline text-primary-light font-bold">04</span>
+</div>
+<h6 class="font-headline text-lg text-on-dark font-bold mb-3 uppercase">Entrega</h6>
+<p class="text-on-dark-soft text-sm px-4">Control de calidad final y piso listo para lucirse.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA OBRAS (redirección clara a obras.html) -->
+<section class="py-24 md:py-28 bg-paper">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="reveal">
+<span class="font-label text-xs text-primary tracking-widest uppercase mb-4 block">Trabajos realizados</span>
+<h2 class="font-headline text-3xl md:text-5xl text-ink font-extrabold mb-6 uppercase leading-tight">Mirá el antes y después de nuestras obras</h2>
+<p class="font-body text-lg text-ink-soft mb-8 leading-relaxed">
+Nada mejor que ver el resultado. Entrá a nuestra galería de obras y descubrí pisos de hormigón pulido, mosaicos y mármoles que ya transformamos.
+</p>
+<a class="btn btn-solid inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 font-headline text-base md:text-lg font-bold uppercase" href="obras.html">
+<span class="material-symbols-outlined">photo_library</span> VER GALERÍA DE OBRAS
+</a>
+</div>
+<div class="grid grid-cols-2 gap-4 reveal">
+<a href="obras.html" class="block col-span-2 h-48 md:h-56 overflow-hidden brand-border">
+<img alt="Obra de piso pulido terminada" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+</a>
+<a href="obras.html" class="block h-32 md:h-40 overflow-hidden brand-border">
+<img alt="Detalle de piso con reflejos" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/6474655/pexels-photo-6474655.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+</a>
+<a href="obras.html" class="block h-32 md:h-40 overflow-hidden brand-border">
+<img alt="Ambiente con piso pulido" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://images.pexels.com/photos/6444266/pexels-photo-6444266.jpeg?auto=compress&cs=tinysrgb&w=1200"/>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 md:py-32 bg-paper-alt">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto max-w-3xl">
+<span class="font-label text-xs text-primary tracking-widest uppercase mb-3 block text-center">Dudas frecuentes</span>
+<h2 class="font-headline text-3xl md:text-5xl text-ink mb-12 text-center uppercase font-extrabold">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="bg-white brand-border group" open="">
+<summary class="p-6 cursor-pointer flex justify-between items-center font-headline text-ink font-bold hover:text-primary transition-colors list-none">
+<span>¿Puedo pulir un piso de hormigón viejo o dañado?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-ink-soft font-body leading-relaxed">
+En la mayoría de los casos sí. Hacemos un estudio previo de la superficie para ver su estado y te recomendamos el proceso más adecuado para lograr un resultado duradero y estético.
+</div>
+</details>
+<details class="bg-white brand-border group">
+<summary class="p-6 cursor-pointer flex justify-between items-center font-headline text-ink font-bold hover:text-primary transition-colors list-none">
+<span>¿El presupuesto tiene costo?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-ink-soft font-body leading-relaxed">
+No, el relevamiento inicial y el presupuesto no tienen costo. Nos contactás por WhatsApp o Instagram y coordinamos una visita.
+</div>
+</details>
+<details class="bg-white brand-border group">
+<summary class="p-6 cursor-pointer flex justify-between items-center font-headline text-ink font-bold hover:text-primary transition-colors list-none">
+<span>¿El pulido de hormigón necesita mantenimiento?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-ink-soft font-body leading-relaxed">
+Es muy bajo mantenimiento comparado con otros pisos: alcanza con limpieza regular. Te damos recomendaciones puntuales según el tipo de sellado o cristalizado que se aplique.
+</div>
+</details>
+<details class="bg-white brand-border group">
+<summary class="p-6 cursor-pointer flex justify-between items-center font-headline text-ink font-bold hover:text-primary transition-colors list-none">
+<span>¿Trabajan en casas particulares y también en locales/empresas?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-ink-soft font-body leading-relaxed">
+Sí, trabajamos tanto en hogares como en espacios de trabajo, locales comerciales y obras nuevas.
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section class="py-24 md:py-32 bg-paper" id="contacto">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<div>
+<span class="font-label text-xs text-primary tracking-widest uppercase mb-3 block">Contactanos</span>
+<h2 class="font-headline text-3xl md:text-5xl text-ink mb-8 uppercase font-extrabold">Iniciemos tu proyecto</h2>
+<form id="contact-form" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label text-ink-soft ml-1 uppercase tracking-widest" for="cf-nombre">Nombre completo</label>
+<input class="w-full bg-paper-alt border border-line focus:border-primary px-4 py-4 font-body text-ink outline-none transition-colors" id="cf-nombre" placeholder="Tu nombre" type="text" required/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label text-ink-soft ml-1 uppercase tracking-widest" for="cf-telefono">WhatsApp / Teléfono</label>
+<input class="w-full bg-paper-alt border border-line focus:border-primary px-4 py-4 font-body text-ink outline-none transition-colors" id="cf-telefono" placeholder="+54 9 11..." type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label text-ink-soft ml-1 uppercase tracking-widest" for="cf-servicio">Servicio de interés</label>
+<select class="w-full bg-paper-alt border border-line focus:border-primary px-4 py-[1.125rem] font-body text-ink outline-none appearance-none cursor-pointer" id="cf-servicio">
+<option value="Pulido de pisos de hormigón">Pulido de pisos de hormigón</option>
+<option value="Instalación de mosaico/mármol">Instalación de mosaico/mármol</option>
+<option value="Armado de piso de hormigón">Armado de piso de hormigón</option>
+<option value="Otra consulta">Otra consulta</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label text-ink-soft ml-1 uppercase tracking-widest" for="cf-mensaje">Contanos sobre tu proyecto</label>
+<textarea class="w-full bg-paper-alt border border-line focus:border-primary px-4 py-4 font-body text-ink outline-none transition-colors resize-none" id="cf-mensaje" placeholder="Superficie aproximada, ubicación, estado actual del piso..." rows="4"></textarea>
+</div>
+<button class="btn btn-solid w-full py-5 font-headline text-base md:text-lg font-bold uppercase tracking-widest flex items-center justify-center gap-3" type="submit">
+<span class="material-symbols-outlined">send</span> ENVIAR POR WHATSAPP
+</button>
+<p class="font-label text-[11px] text-ink-soft text-center">Al enviar, se abre WhatsApp con tu consulta ya redactada.</p>
+</form>
+</div>
+<div class="flex flex-col gap-6">
+<a class="p-8 bg-paper-dark brand-border flex items-center gap-6 border-l-8 border-l-primary hover:bg-black transition-colors" href="https://wa.me/5491125547252" target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-primary-light text-5xl">call</span>
+<div>
+<p class="font-label text-xs text-on-dark-soft mb-1 uppercase tracking-widest">Whatsapp / Teléfono</p>
+<p class="font-headline text-2xl text-on-dark">011 2554-7252</p>
+</div>
+</a>
+<a class="p-8 bg-paper-dark brand-border flex items-center gap-6 border-l-8 border-l-primary hover:bg-black transition-colors" href="https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw" target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-primary-light text-5xl">photo_camera</span>
+<div>
+<p class="font-label text-xs text-on-dark-soft mb-1 uppercase tracking-widest">Seguinos en Instagram</p>
+<p class="font-headline text-xl text-on-dark">@innovacionpulidoss</p>
+</div>
+</a>
+<div class="p-8 bg-primary text-white brand-border flex-grow flex flex-col justify-center">
+<span class="material-symbols-outlined text-3xl mb-4">verified</span>
+<h4 class="font-headline text-xl font-bold mb-3 uppercase">Presupuesto sin cargo</h4>
+<p class="font-body text-white/85">Escribinos y coordinamos una visita para evaluar tu piso sin ningún compromiso.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-20 md:py-24 bg-primary relative overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-headline text-3xl md:text-5xl text-white mb-10 uppercase leading-tight font-extrabold">Transformá tu piso.<br/><span class="text-white/80">Empezá hoy mismo.</span></h2>
+<a class="inline-flex items-center gap-4 bg-white text-primary px-8 md:px-16 py-6 md:py-8 font-headline text-lg md:text-2xl font-bold hover:scale-105 transition-all shadow-2xl" href="https://wa.me/5491125547252?text=Hola%20Innovaci%C3%B3n%20Pulidos!%20Quiero%20un%20diagn%C3%B3stico%20de%20mi%20piso." target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span> PEDIR DIAGNÓSTICO GRATIS
+</a>
+</div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-paper-dark pt-20 border-t border-line-dark">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="lg:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="flex-shrink-0 w-12 h-12 bg-primary text-white flex items-center justify-center font-headline font-extrabold text-lg">IP</span>
+<span class="font-headline text-xl font-bold uppercase text-on-dark">Innovación<br/>Pulidos</span>
+</div>
+<p class="font-body text-on-dark-soft max-w-md mb-8 leading-relaxed">
+Especialistas en pulido de pisos de hormigón, instalación de mosaico/mármol y armado de piso de hormigón. Trabajo profesional, responsable y de excelencia en cada proyecto.
+</p>
+<div class="flex gap-4">
+<a class="w-12 h-12 flex items-center justify-center border border-line-dark hover:bg-primary hover:border-primary transition-all group" href="https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw" target="_blank" rel="noopener" aria-label="Instagram">
+<span class="material-symbols-outlined text-on-dark group-hover:text-white">photo_camera</span>
+</a>
+<a class="w-12 h-12 flex items-center justify-center border border-line-dark hover:bg-primary hover:border-primary transition-all group" href="https://wa.me/5491125547252" target="_blank" rel="noopener" aria-label="WhatsApp">
+<span class="material-symbols-outlined text-on-dark group-hover:text-white">chat</span>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-label text-xs text-primary-light mb-6 tracking-widest uppercase">Servicios</h6>
+<ul class="space-y-3 font-body text-on-dark-soft">
+<li><a class="hover:text-primary-light transition-colors flex items-center gap-2" href="#servicios"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Pulido de Hormigón</a></li>
+<li><a class="hover:text-primary-light transition-colors flex items-center gap-2" href="#servicios"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Mosaico y Mármol</a></li>
+<li><a class="hover:text-primary-light transition-colors flex items-center gap-2" href="#servicios"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Armado de Piso</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label text-xs text-primary-light mb-6 tracking-widest uppercase">Enlaces</h6>
+<ul class="space-y-3 font-body text-on-dark-soft">
+<li><a class="hover:text-primary-light transition-colors flex items-center gap-2" href="#nosotros"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Nosotros</a></li>
+<li><a class="hover:text-primary-light transition-colors flex items-center gap-2" href="obras.html"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Obras</a></li>
+<li><a class="hover:text-primary-light transition-colors flex items-center gap-2" href="#contacto"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Contacto</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-line-dark gap-4">
+<p class="font-label text-xs text-on-dark-soft opacity-70">© 2026 Innovación Pulidos. Todos los derechos reservados.</p>
+<a class="hover:text-primary-light transition-colors font-label text-xs text-on-dark-soft opacity-70" href="tel:+541125547252">011 2554-7252</a>
+</div>
+</div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-all flex items-center justify-center" href="https://wa.me/5491125547252" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+<svg fill="currentColor" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Innovación Pulidos",
+  "description": "Especialistas en pulido de pisos de hormigón, instalación de mosaico/mármol y armado de piso de hormigón.",
+  "telephone": "+541125547252",
+  "sameAs": ["https://www.instagram.com/innovacionpulidoss?igsh=YXVxOWtqNWU4aHUw"],
+  "priceRange": "$$"
+}
+</script>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('flex');
+            mobileMenu.classList.toggle('flex', !isOpen);
+            mobileMenu.classList.toggle('hidden', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuIcon.textContent = isOpen ? 'menu' : 'close';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuIcon.textContent = 'menu';
+            });
+        });
+    }
+
+    const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nombre = document.getElementById('cf-nombre').value.trim();
+            const telefono = document.getElementById('cf-telefono').value.trim();
+            const servicio = document.getElementById('cf-servicio').value;
+            const mensaje = document.getElementById('cf-mensaje').value.trim();
+
+            let texto = `Hola Innovación Pulidos! Soy ${nombre || '(sin nombre)'}.`;
+            texto += ` Me interesa: ${servicio}.`;
+            if (mensaje) texto += ` ${mensaje}`;
+            if (telefono) texto += ` Mi teléfono de contacto es ${telefono}.`;
+
+            const url = `https://wa.me/5491125547252?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank', 'noopener');
+        });
+    }
+</script>
+</body>
+</html>
